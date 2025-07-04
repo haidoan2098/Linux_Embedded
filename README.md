@@ -1,0 +1,4 @@
+- [Lesson](https://drive.google.com/drive/folders/1hiALxhsAKAq_qqBvVVVmdN1TlbchqVQ4?usp=drive_link)								
+- [Exercise](https://docs.google.com/document/d/1PVBAmamxzcGoOkeYgtMyG73t_GrVQ9oRN7s74-eOlWs/edit?usp=drive_link)			
+- [Slide]()			
+- [Supplementary Exercise]()		
