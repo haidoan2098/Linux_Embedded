@@ -1,35 +1,35 @@
 #include <stdio.h>
 #include <string.h>
-#include "strutils.h" 
+#include "strutils.h"  // Giả định bạn đã định nghĩa các hàm trong file này
 
 int main() {
-    char str1[100] = "Hello World";
-    char str2[100] = "   Trim me   ";
-    char str3[100];
-    int number;
-
     // Test str_reverse
-    printf("=== Test str_reverse ===\n");
-    printf("Original: '%s'\n", str1);
+    char str1[] = "Embedded";
+    printf("Original: %s\n", str1);
     str_reverse(str1);
-
+    printf("Reversed: %s\n", str1);
 
     // Test str_trim
-    printf("=== Test str_trim ===\n");
-    printf("Before trim: '%s'\n", str2);
+    char str2[] = "   Hello, world!   ";
+    printf("\nOriginal with spaces: \"%s\"\n", str2);
     str_trim(str2);
-
+    printf("Trimmed: \"%s\"\n", str2);
 
     // Test str_to_int
-    printf("=== Test str_to_int ===\n");
-    printf("Enter the number string : ");
-    fgets(str3, sizeof(str3), stdin);
-    str3[strcspn(str3, "\n")] = '\0';  // Xoá '\n'
+    const char *str3 = "12345";
+    const char *str4 = "abc123";
+    int number;
 
-    if (str_to_int(str3, &number)) {
-        printf("Successfull Conversion: %d\n", number);
+    if (str_to_int(str3, &number) == 1) {
+        printf("\nConverted '%s' to integer: %d\n", str3, number);
     } else {
-        printf("ERROR!\n");
+        printf("\nFailed to convert '%s' to integer.\n", str3);
+    }
+
+    if (str_to_int(str4, &number) == 1) {
+        printf("Converted '%s' to integer: %d\n", str4, number);
+    } else {
+        printf("Failed to convert '%s' to integer.\n", str4);
     }
 
     return 0;

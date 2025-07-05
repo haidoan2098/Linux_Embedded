@@ -1,7 +1,6 @@
 #include "strutils.h"
 #include <stdio.h>
 
-
 static uint32_t lengthString(char *str) {
     uint32_t length = 0;
     while (str[length] != '\0') {
@@ -10,19 +9,14 @@ static uint32_t lengthString(char *str) {
     return length;
 }
 
-
 void str_reverse(char *str) {
-    uint32_t lengStr = lengthString(str);         
-    char reverseStr[lengStr];
+    uint32_t lengStr = lengthString(str);           
 
-    uint32_t j = 0;
-    for (int i = lengStr - 1; i >= 0; i--) {
-        reverseStr[j++] = str[i];   
+    for (uint32_t i = 0; i < lengStr / 2; i++) {
+        char tmp = str[i];
+        str[i] = str[lengStr - 1 - i];
+        str[lengStr - 1 - i] = tmp;
     }
-
-    reverseStr[j] = '\0';
-
-    printf("Reverse String: %s\n", reverseStr);
 }
 
 void str_trim(char *str) {
@@ -36,16 +30,12 @@ void str_trim(char *str) {
         lastCharPos--;
     }
 
-    uint32_t newLength = (lastCharPos - firstCharPos + 1) + 1; // +1 kí tự null
-    char newString[newLength]; 
-    uint32_t pos = 0;
+    uint32_t newPos = 0;
     for (int i = firstCharPos; i <= lastCharPos; i++) {
-        newString[pos] = str[i];
-        pos++;
+        str[newPos] = str[i];
+        newPos++;
     }
-    newString[pos] = '\0';
-    
-    printf("After trim: `%s`\n", newString); 
+    str[newPos] = '\0';
 }
 
 int str_to_int(const char *str, int *out_num) {
