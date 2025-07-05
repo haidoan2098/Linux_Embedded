@@ -257,10 +257,11 @@ Hầu hết việc đọc ghi file trên Linux được thực hiện bằng 5 f
 	| 	 `LOCK_SH`     	| Khóa chia sẻ (shared – đọc) - Cho phép nhiều tiến trình đọc | 
 	|    `LOCK_EX`         | Khóa độc quyền (exclusive – ghi) - Cho phép 1 tiến trình ghi |		
 	|    `LOCK_UN`         | Gỡ bỏ khóa  |		
-	|    `LOCK_NB`         | Không chờ, nếu bị khóa thì trả lỗi ngay |				
-	**Trả về:**
-		+ `0` nếu thành công. 
-		+ `-1`nếu lỗi. 				
+	|    `LOCK_NB`         | Không chờ, nếu bị khóa thì trả lỗi ngay |			
+
+	**Trả về:**				
+	+ `0` nếu thành công. 
+	+ `-1`nếu lỗi. 				
 	
 	**Dựa vào Flags, có 2 kiểu xin khóa trong `flock()`:**  
 	**1. Blocking (chờ đến khi có khóa)**                       				
