@@ -91,6 +91,7 @@ Hầu hết việc đọc ghi file trên Linux được thực hiện bằng 5 f
 	| 	`pathname`           | Tên file hoặc đường dẫn đến file cần mở.                     |
 	|	 `flags`             | Xác định cách mở.                                      						|		
 	| 	`mode`               | Quyền cấp khi tạo file mới.       							 		 |
+
 	**Trả về:**	        
 	+ Một **file descriptor (fd)** là số nguyên nếu thành công (thường bắt đầu từ 3), có thể hiểu fd như số đại diện cho file.	
 	+ Trả về `-1` nếu lỗi.	        
@@ -124,6 +125,7 @@ Hầu hết việc đọc ghi file trên Linux được thực hiện bằng 5 f
 	| 	`fd`               				| File descriptor (mã số đại diện cho file)                   |
 	| 	`buf`             		   		| Con trỏ trỏ tới vùng nhớ chứa dữ liệu cần ghi                                     						|		
 	| 	`count`                	   | Số byte cần ghi từ buffer vào file     							 		 |
+
     **Trả về:**	
 	+ Số byte **thực tế** đã được ghi nếu thành công.
 	+ `-1` nếu lỗi (ví dụ: file không mở để ghi, ổ đĩa đầy, lỗi phân quyền...).     
@@ -142,6 +144,7 @@ Hầu hết việc đọc ghi file trên Linux được thực hiện bằng 5 f
 	| 	`fd`               				| File descriptor (mã số đại diện cho file)                   |
 	| 	`buf`             		   		| Con trỏ trỏ đến vùng nhớ sẽ chứa dữ liệu đã đọc được        |		
 	| 	`count`                	   | Số byte tối đa muốn đọc    							 		 |
+
 	**Trả về:**	
 	 + Số byte **thực tế đã đọc** nếu thành công (có thể < `count`).
 	 + `0` nếu đọc đến **EOF** (kết thúc file).	
@@ -168,6 +171,7 @@ Hầu hết việc đọc ghi file trên Linux được thực hiện bằng 5 f
 	| 	`SEEK_SET`               				| Di chuyển tới vị trí `offset` tính từ đầu file                 |
 	| 	`SEEK_CUR`             		 | Di chuyển tới vị trí `offset` tính từ vị trí hiện tại      |		
 	| 	`SEEK_END`                	   | Di chuyển tới vị trí `offset` tính từ cuối file   							 		 |
+
 	**Trả về:**	
 	+ 	Vị trí mới của file offset (tính từ đầu file) nếu thành công.
 	+ `-1` nếu lỗi.	
@@ -290,6 +294,7 @@ Hầu hết việc đọc ghi file trên Linux được thực hiện bằng 5 f
 	|    `F_SETLKW`   | Đặt khóa, **blocking** 						|		
 	|    `F_UNLCK`     | Gỡ khóa  												|		
 	|    `F_GETLK`     | Kiểm tra xem vùng đã bị khóa chưa  |							
+	
 	**Cấu trúc** `struct flock`:	
 	```cpp		
 	struct flock {
