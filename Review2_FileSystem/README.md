@@ -64,9 +64,9 @@ Trong hệ điều hành Linux, **mọi thứ được coi là file** và hệ t
 	Quyền dưới dạng số (như cách đổi nhị phân -> thập phân).        
 	Ví dụ: Quyền hiện tại `rwxrwxr-x`	
 	```bash
-		r	w	x				r	w	x				r	-   x	
-		|	|	|				|	|	|				|	|	|
-		1	1	1	=> 7			1	1	1	=> 7			1	0	1	=> 5
+		r	w	x			r	w	x			r	-   	x	
+		|	|	|			|	|	|			|	|	|
+		1	1	1	=> 7		1	1	1	=> 7		1	0	1	=> 5
 	```
 	Hiện tại, Others không thể Write vào file được, để Others ghi được thì User phải cấp quyền:         
 	**Dùng lệnh:** `chmod XYZ filename`      
