@@ -237,7 +237,7 @@ Hầu hết việc đọc ghi file trên Linux được thực hiện bằng 5 f
 	| 	 `fsync(fd)`      | Buộc kernel ghi toàn bộ dữ liệu liên quan đến fd từ Page Cache vào đĩa. | 
 	|    `sync()`         	|	Ghi mọi dữ liệu từ tất cả Page Cache của hệ thống vào đĩa.  |		
 
-## C. File Locking 			
+## D. File Locking 			
 **Bài toán đặt ra:** Giả sử có 2 Process cùng ghi vào cùng 1 file thì chuyện gì xảy ra ?        
 	-> Kết quả là dữ liệu trên file đó sẽ bị ghi đè lẫn nhau, làm mất dữ liệu. 			
 - **Mục đích của File Locking:** 
